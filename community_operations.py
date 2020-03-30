@@ -1,7 +1,8 @@
-import networkx as nx
-from cdlib import algorithms
-from community_features import *
 import pickle
+
+from cdlib import algorithms
+
+from community_features import *
 
 
 def static_community_detection(snapshots, pkl=None) -> list:
@@ -185,7 +186,8 @@ FEATURE_NAMES = [
     "size", "density", "clustering", "avg_closeness_centrality", "degree",
     # "eigenvectors_centrality",
     "leadership", "cohesion", "#Keynodes", "max_activity", "mean_activity", "sum_activity", "%Stakeholder",
-    "%Service", "Kdegree", "Kavg_closeness_centrality", "Keigenvectors_centrality"
+    "%Service", "Kdegree", "Kavg_closeness_centrality"
+    # "Keigenvectors_centrality"
 ]
 
 
