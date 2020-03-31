@@ -1,5 +1,9 @@
+from collections import Counter
+
 import numpy as np
 import plotly.graph_objects as go
+
+from model_operations import extract_ids
 
 
 def summary_report(shape_values, feature_names, class_names, merge=False):
@@ -78,3 +82,25 @@ def dependency_report(feature_name, class_name, shap_values, data, feature_names
 
     )
     fig.write_html(f"figure/dependency_{feature_name}_{class_name}.html")
+
+
+def evolution_event_distribution_report(timestamps, meta_community_network):
+    bar_data = {}
+    for node in meta_community_network.nodes():
+        sid, _ = extract_ids(node)
+        pre_event = meta_community_network.nodes[node]['pre']
+        if pre_event != "None":
+            bar_data[timestamps[sid-1]] = bar_data.get(timestamps[sid-1], [])
+            bar_data[timestamps[sid-1]].append(pre_event)
+        nex_event = meta_community_network.nodes[node]['nex']
+        if nex_event != "None":
+            bar_data[timestamps[sid]] = bar_data.get(timestamps[sid], [])
+            bar_data[timestamps[sid]].append(nex_event)
+    data = []
+    ne_count = ["#forming", "#continuing", "#growing", "#shrinking", "#splitting", "#merging", "#dissolving"]
+    for timestamp in timestamps[:-1]:
+        counter = Counter(bar_data[timestamp])
+        data.append(go.Bar(name=timestamp, x=ne_count, y=[counter.get(ne[1:], 0) for ne in ne_count]))
+    fig = go.Figure(data=data)
+    fig.update_layout(barmode="group")
+    fig.write_html("figure/evolution_event_distribution.html")

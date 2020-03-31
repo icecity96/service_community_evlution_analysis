@@ -6,7 +6,7 @@ import numpy as np
 from community_operations import *
 from generate_snapshots import generate_snapshots
 from model_operations import generate_samples, train_prediction_model
-from report import dependency_report
+from report import evolution_event_distribution_report
 
 if __name__ == '__main__':
     nodes = [json.loads(node)["data"] for node in open("data/nodes.json", encoding="utf8").readlines()]
@@ -29,6 +29,7 @@ if __name__ == '__main__':
     # summary_report(shape_values, FEATURE_NAMES, class_names, True)
     # feature_names = [f'1-{name}' for name in FEATURE_NAMES] + [f'2-{name}' for name in FEATURE_NAMES] + [f'3-{name}' for name in FEATURE_NAMES]
     # summary_report(shape_values, feature_names, class_names, False)
-    for feature_name in FEATURE_NAMES:
-        for class_name in class_names:
-            dependency_report(feature_name, class_name, shape_values, samples["train_X"], FEATURE_NAMES, class_names)
+    # for feature_name in FEATURE_NAMES:
+    #     for class_name in class_names:
+    #         dependency_report(feature_name, class_name, shape_values, samples["train_X"], FEATURE_NAMES, class_names)
+    evolution_event_distribution_report(snapshots["timestamps"], meta_community_network)

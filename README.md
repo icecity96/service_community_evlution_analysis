@@ -34,3 +34,16 @@ Related code be found in:
 Service ecosystem snapshots generation, static community detection, nodes' social position calculation
 are time consuming. So we provide a copy of our intermediate results, which have been stored in `data/*.pkl`. 
 You can use this data to save your time.
+
+## Source code
+* `generate_snapshots.py`: this script mainly contains `aging function` and Service Ecosystem snapshots 
+steps
+* `community_features.py`: this script contains some common used community features.
+* `community_options.py`: this script contains **community detection**, **meta community identifier**, 
+**community evolutionary event detection**, **community features vector construction**, etc.
+* `model_operations.py`: this script contains how to train the service community evolutionary event prediction model.
+And apply the [SHAP](https://github.com/slundberg/shap) explainer on the model.
+* `report.py`: this script mainly contains how to visualize the analysis results.
+* `test.py`: this script gives an example of whole process. (Notebook version will come soon)
+
+## Report
