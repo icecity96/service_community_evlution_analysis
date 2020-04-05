@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="Copy of project-level server 'gpu104'">
+    <serverData>
+      <paths name="Copy of project-level server 'gpu104'">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/lmy/Project/coference/icsoc-2020" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="lmy@192.168.1.104:22333">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

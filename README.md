@@ -47,3 +47,10 @@ And apply the [SHAP](https://github.com/slundberg/shap) explainer on the model.
 * `test.py`: this script gives an example of whole process. (Notebook version will come soon)
 
 ## Report
+Generated figures are stored in `figure` folder with `.html` format.
+* `summary_{evolution_evnt}.html`: the summary report of `evolution_evnt` shows the importance of different features (merged) to the event.
+* `dependency_{feature}_{evolution_evnt}.html`: the dependency report gives much detailed information.
+
+Please refer to the paper to get more details.
+
+
