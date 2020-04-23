@@ -1,10 +1,17 @@
-# ICSOC2020 Service Community Evolution Tracking and Pattern Analysising in Service Ecosystem
+# ICSOC2020 Community-Based Service Ecosystem Evolution Analysis
 
 ## Data Description
 In `data` dictionary, we release our data used in this paper. The release dataset collection 
 and processing process can refer to our previous work.
 ```latex
-
+@misc{liu2020datadriven,
+    title={A Data-driven Approach for Constructing Multilayer Network-based Service Ecosystem Models},
+    author={Mingyi Liu and Zhiying Tu and Xiaofei Xu and Zhongjie Wang},
+    year={2020},
+    eprint={2004.10383},
+    archivePrefix={arXiv},
+    primaryClass={cs.CY}
+}
 ```
 Related code be found in:
 
@@ -54,3 +61,20 @@ Generated figures are stored in `figure` folder with `.html` format.
 Please refer to the paper to get more details.
 
 
+## Appendix
+### Evaluate on different classifiers
+![f6ab4964084836e6b6f0fe5f801ded2](figure/evaluate.png)
+
+In our paper, we chose random forest. You can chose other prediction mode. All you need to do is
+moddify the function `train_prediction_model` in `model_operations.py`.
+```python
+if model_name == "random_forest":
+    model = RandomForestClassifier(n_estimators=50)
+elif model_name == "xxxx": #modify here, and change params value
+    model = XxxxClassifier(mmmm=xxx)
+```
+
+## Contact
+If you have any questions, feel free to contact us
+
+**liumy@hit.edu.cn**

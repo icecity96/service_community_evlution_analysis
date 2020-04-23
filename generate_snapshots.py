@@ -1,9 +1,8 @@
-import json
-import networkx as nx
-from  datetime import datetime as dt
-from datetime import timedelta
 import pickle
+from datetime import datetime as dt
+from datetime import timedelta
 
+import networkx as nx
 
 INITIAL_WEIGHT = {"exit": -1, "conflict": -1, "join": 4, "acquisition": 4, "BelongTo": 2, "Structural": 2}
 STABLE_EDGE = ["exit", "conflict", "join", "acquisition", "BelongTo", "Structural"]
@@ -32,7 +31,7 @@ def linear_decay(edge_type: str, duration: int, initial_weight: dict = None,
     weight = initial_weight.get(edge_type, default_weight)
     aging_cofficient = max(duration / decay_rate, 1)
     if aging_cofficient > max_decay:
-        return -1
+        return 0
     return weight / aging_cofficient
 
 
@@ -68,6 +67,8 @@ def _generate_snapshot(end_time, nodes, edges, ignore_event=True):
         if weight < 0:
             if snapshot.has_edge(edge['source'], edge['target']):
                 snapshot.remove_edge(edge['source'], edge['target'])
+        if weight == 0:
+            continue
         else:
             if not snapshot.has_edge(edge['source'], edge['target']):
                 snapshot.add_edge(edge['source'], edge['target'], weight=0)
