@@ -1,4 +1,4 @@
-# ICSOC2020 Community-Based Service Ecosystem Evolution Analysis
+# Community-Based Service Ecosystem Evolution Analysis
 
 ## Data Description
 In `data` dictionary, we release our data used in this paper. The release dataset collection 
