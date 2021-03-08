@@ -2,7 +2,7 @@
 
 ## Data Description
 In `data` dictionary, we release our data used in this paper. The release dataset collection 
-and processing process can refer to our previous work.
+and processing process can refer:
 ```latex
 @misc{liu2020datadriven,
     title={A Data-driven Approach for Constructing Multilayer Network-based Service Ecosystem Models},
