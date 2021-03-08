@@ -73,8 +73,3 @@ if model_name == "random_forest":
 elif model_name == "xxxx": #modify here, and change params value
     model = XxxxClassifier(mmmm=xxx)
 ```
-
-## Contact
-If you have any questions, feel free to contact us
-
-**liumy@hit.edu.cn**
